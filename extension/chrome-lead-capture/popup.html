@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>采集线索</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <h1>采集到工作台</h1>
+      <p id="status">读取当前网页信息。</p>
+      <label>
+        公司名称
+        <input id="company" placeholder="自动读取网页标题，可手动修改" />
+      </label>
+      <label>
+        联系人
+        <input id="contact" placeholder="可选" />
+      </label>
+      <label>
+        备注
+        <textarea id="notes" placeholder="网页来源、产品兴趣、跟进动作"></textarea>
+      </label>
+      <button id="capture" type="button">保存线索</button>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

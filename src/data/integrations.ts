@@ -1,0 +1,51 @@
+import type { IntegrationConnector } from '../domain/auth'
+
+export const integrationConnectors: IntegrationConnector[] = [
+  {
+    id: 'github',
+    name: 'GitHub 网站托管',
+    provider: 'github',
+    status: 'ready',
+    authUrl: 'https://github.com/settings/tokens',
+    scopes: ['repo', 'workflow'],
+    callbackUrl: null,
+    localPath: 'GitHub CLI 已授权，后续通过 gh 自动部署',
+  },
+  {
+    id: 'gmail',
+    name: 'Gmail',
+    provider: 'google',
+    status: 'needs-user-oauth',
+    authUrl: 'https://accounts.google.com/o/oauth2/v2/auth',
+    scopes: ['gmail.modify', 'gmail.send'],
+    callbackUrl: 'http://127.0.0.1:5173/oauth/google/callback',
+  },
+  {
+    id: 'outlook',
+    name: 'Outlook / Exchange',
+    provider: 'microsoft',
+    status: 'needs-user-oauth',
+    authUrl: 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize',
+    scopes: ['Mail.ReadWrite', 'Mail.Send', 'offline_access'],
+    callbackUrl: 'http://127.0.0.1:5173/oauth/microsoft/callback',
+  },
+  {
+    id: 'whatsapp',
+    name: 'WhatsApp Web',
+    provider: 'whatsapp',
+    status: 'manual-confirm-only',
+    authUrl: 'https://web.whatsapp.com/',
+    scopes: [],
+    callbackUrl: null,
+  },
+  {
+    id: 'chrome',
+    name: 'Chrome 线索采集扩展',
+    provider: 'chrome',
+    status: 'deployed-local',
+    authUrl: 'chrome://extensions/',
+    scopes: [],
+    callbackUrl: null,
+    localPath: 'extension/chrome-lead-capture',
+  },
+]

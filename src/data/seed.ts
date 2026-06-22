@@ -1,0 +1,136 @@
+import type { Connector, Customer, Product } from '../domain/types'
+
+export const today = '2026-06-20'
+
+export const businessLines = [
+  { id: 'factory-a', name: '箱包出口业务线' },
+  { id: 'factory-b', name: '配件出口业务线' },
+]
+
+export const customers: Customer[] = [
+  {
+    id: 'c-1',
+    businessLineId: 'factory-a',
+    company: 'Northstar Retail',
+    contactName: 'Emma Wilson',
+    country: 'United States',
+    language: 'English',
+    industry: 'Outdoor retail',
+    stage: 'Inquiry',
+    valueScore: 86,
+    source: 'LinkedIn',
+    tags: ['high-value', 'sample-needed'],
+    lastContactAt: '2026-06-01',
+    nextFollowUpAt: '2026-06-18',
+    notes: ['Asked for waterproof fabric options.'],
+  },
+  {
+    id: 'c-2',
+    businessLineId: 'factory-a',
+    company: 'Berlin Import GmbH',
+    contactName: 'Lena Meyer',
+    country: 'Germany',
+    language: 'German',
+    industry: 'Distributor',
+    stage: 'Cold Lead',
+    valueScore: 62,
+    source: 'Yellow Pages',
+    tags: ['new-lead'],
+    lastContactAt: '2026-06-19',
+    nextFollowUpAt: '2026-06-26',
+    notes: ['No reply yet.'],
+  },
+  {
+    id: 'c-3',
+    businessLineId: 'factory-a',
+    company: 'Atlas Buying Office',
+    contactName: 'Sofia Garcia',
+    country: 'Mexico',
+    language: 'Spanish',
+    industry: 'Buying office',
+    stage: 'Follow-up',
+    valueScore: 74,
+    source: 'Website inquiry',
+    tags: ['catalog-request'],
+    lastContactAt: '2026-06-07',
+    nextFollowUpAt: '2026-06-20',
+    notes: ['Needs Spanish product summary.'],
+  },
+  {
+    id: 'c-4',
+    businessLineId: 'factory-b',
+    company: 'Pacific Sourcing',
+    contactName: 'Mia Chen',
+    country: 'Singapore',
+    language: 'English',
+    industry: 'Sourcing agency',
+    stage: 'Negotiation',
+    valueScore: 91,
+    source: 'Referral',
+    tags: ['partner'],
+    lastContactAt: '2026-06-10',
+    nextFollowUpAt: '2026-06-17',
+    notes: ['Separate business line.'],
+  },
+]
+
+export const products: Product[] = [
+  {
+    id: 'p-1',
+    businessLineId: 'factory-a',
+    name: 'Waterproof Travel Backpack',
+    category: 'Bags',
+    specs: ['600D polyester', '18L capacity', 'custom logo support'],
+    sellingPoints: ['water-resistant surface', 'factory-direct sampling', 'bulk order support'],
+    applications: ['retail programs', 'corporate gifts'],
+    faq: ['MOQ and lead time can be confirmed after style selection.'],
+  },
+  {
+    id: 'p-2',
+    businessLineId: 'factory-b',
+    name: 'Aluminum Bottle Clip',
+    category: 'Outdoor accessories',
+    specs: ['aluminum alloy', 'matte finish', 'private label packaging'],
+    sellingPoints: ['lightweight structure', 'custom color options'],
+    applications: ['outdoor retail', 'gift sets'],
+    faq: ['Color samples can be prepared before bulk order confirmation.'],
+  },
+]
+
+export const connectors: Connector[] = [
+  {
+    id: 'openai',
+    name: 'AI 模型连接',
+    kind: 'ai',
+    status: 'ready',
+    description: '当前使用本地模板模式；配置 API Key 后可切换真实模型。',
+  },
+  {
+    id: 'gmail',
+    name: 'Gmail / Outlook 邮箱',
+    kind: 'email',
+    status: 'needs-auth',
+    description: '需要你登录授权后才能读取收件箱、归档回复和追踪发信。',
+  },
+  {
+    id: 'whatsapp',
+    name: 'WhatsApp Web',
+    kind: 'messaging',
+    status: 'manual-confirm',
+    description: 'AI 只生成草稿，最终发送必须由人工确认。',
+  },
+  {
+    id: 'github',
+    name: 'GitHub 网站托管',
+    kind: 'website',
+    status: 'needs-auth',
+    description: '需要授权仓库后才能一键创建、提交和部署网站。',
+  },
+  {
+    id: 'chrome',
+    name: 'Chrome 线索采集',
+    kind: 'browser',
+    status: 'not-configured',
+    description: '浏览器扩展需要单独打包安装后才能采集网页线索。',
+  },
+]
